@@ -23,21 +23,25 @@ function ArrayMatchingChallenge(strArr) {
     let arrStr0 = strArr[0]
     let arryStr1 = strArr[1]
 
-    // Convert the strings to arrays of numbers using JSON.parse()
-    let toArryNum0 = JSON.parse(arrStr0)
-    let toArrNum1 = JSON.parse(arryStr1)
+    // Remove the square brackets from the strings 
+    let cleanedArrStr0 = arrStr0.replace(/[\[\]']+/g, '')
+    let cleanedArrStr1 = arryStr1.replace(/[\[\]']+/g, '')
+
+    // Convert the cleaned strings to arrays of numbers 
+    let toArr0 = cleanedArrStr0.split(',').map(Number)
+    let toArr1 = cleanedArrStr1.split(',').map(Number)
 
     // an empty array to store the sum of the two arrays
     let resultArr = []
 
     // Determine the length of the longest array
-    let maxLength = Math.max(toArryNum0.length, toArrNum1.length)
+    let maxLength = Math.max(toArr0.length, toArr0.length)
 
     // Iterate over the longest array
     for (let i = 0; i < maxLength; i++) {
         // Add the corresponding elements of the two arrays
         // if one array is shorter, add the remaining elements of the longer array
-        let sum = ((toArryNum0[i] || 0) + (toArrNum1[i] || 0))
+        let sum = ((toArr0[i] || 0) + (toArr1[i] || 0))
         resultArr.push(sum)
     }
 
