@@ -23,17 +23,9 @@ function ArrayMatchingChallenge(strArr) {
     let arrStr0 = strArr[0]
     let arryStr1 = strArr[1]
 
-    // Remove the square brackets from the strings 
-    // let cleanedArrStr0 = arrStr0.replace(/[\[\]']+/g, '')
-    // let cleanedArrStr1 = arryStr1.replace(/[\[\]']+/g, '')
-
     // Convert the strings to arrays of numbers using JSON.parse()
     let toArryNum0 = JSON.parse(arrStr0)
     let toArrNum1 = JSON.parse(arryStr1)
-
-    // Convert the cleaned strings to arrays of numbers 
-    // let toArr0 = cleanedArrStr0.split(',').map(Number)
-    // let toArr1 = cleanedArrStr1.split(',').map(Number)
 
     // an empty array to store the sum of the two arrays
     let resultArr = []
